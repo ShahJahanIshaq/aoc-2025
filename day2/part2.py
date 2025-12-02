@@ -30,6 +30,7 @@ def solve():
 
     print(ans)
 
+# dfs - O(10^size)
 def permute(perm_set, size, curr):
     if len(curr) >= size:
         perm_set.add(curr)
@@ -41,6 +42,7 @@ def permute(perm_set, size, curr):
         permute(perm_set, size, curr)
         curr = curr[:-1]
 
+# O(|ranges|), can be optimized to O(log_2 |ranges|) using binary search
 def belongs(ranges, num):
     for start, end in ranges:
         if start <= num <= end:
